@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUP_activity">
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/background_edited"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+
+         <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.4"
+             android:paddingTop="40dp"
+             android:paddingRight="120dp"
+             android:paddingBottom="20dp"
+        android:src="@drawable/signup_text" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:orientation="vertical"
+            android:layout_weight="0.8"
+            android:layout_height="0dp"
+            android:paddingTop="8dp"
+            android:background="@drawable/transparent_white_box">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textSize="24sp"
+                android:textStyle="italic"
+                android:textColor="@color/white"
+                android:text="Get Started"/>
+
+
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/rounded_white"
+                android:hint="  Enter Name"/>
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/rounded_white"
+                android:hint="  Enter Email"/>
+
+            <AutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/rounded_white"
+                android:hint="  Enter Password"/>
+           <RadioButton
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:textColor="@color/white"
+               android:layout_marginTop="16dp"
+               android:textStyle="italic"
+               android:textSize="11sp"
+               android:layout_gravity="center"
+               android:button="@drawable/radio_button"
+               android:text="  I agree to the terms and conditions "/>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:background="@drawable/register_button"
+                android:layout_marginTop="16dp"
+                android:textColor="@color/white"
+                android:textSize="11sp"
+                android:text="Register"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_weight="0.3"
+            android:layout_height="0dp">
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</RelativeLayout>
