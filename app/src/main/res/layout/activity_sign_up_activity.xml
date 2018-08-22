@@ -51,6 +51,7 @@
             <AutoCompleteTextView
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
+                android:id="@+id/editTextName"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="8dp"
@@ -58,6 +59,8 @@
                 android:hint="  Enter Name"/>
 
             <AutoCompleteTextView
+                android:inputType="textEmailAddress"
+                android:id="@+id/editTextEmail"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="8dp"
@@ -67,14 +70,17 @@
                 android:hint="  Enter Email"/>
 
             <AutoCompleteTextView
+                android:id="@+id/editTextPassword"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginRight="8dp"
                 android:background="@drawable/rounded_white"
+                android:inputType="textPassword"
                 android:hint="  Enter Password"/>
            <RadioButton
+               android:id="@+id/radioButtonAgreement"
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:textColor="@color/white"
@@ -86,6 +92,7 @@
                android:text="  I agree to the terms and conditions "/>
 
             <Button
+                android:id="@+id/buttonRegister"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:background="@drawable/register_button"

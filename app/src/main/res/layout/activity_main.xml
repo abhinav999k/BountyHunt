@@ -62,12 +62,13 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="sans-serif-light"
-                        android:text="Username"
+                        android:text="E-mail"
                         android:textAllCaps="true"
                         android:textColor="@color/white"
                         android:textSize="15sp" />
 
                     <EditText
+                        android:id="@+id/editTextLEmail"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
@@ -96,6 +97,7 @@
                         android:textSize="15sp" />
 
                     <EditText
+                        android:id="@+id/editTextLPassword"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginTop="5dp"
@@ -111,6 +113,7 @@
             </LinearLayout>
 
             <Button
+                android:id="@+id/buttonLogIn"
                 android:layout_width="wrap_content"
                 android:layout_height="40dp"
                 android:layout_below="@+id/linlay1"
@@ -144,7 +147,7 @@
             android:background="@color/transparent"
             android:fontFamily="sans-serif"
             android:text="Signup Now"
-            android:id="@+id/signup_button"
+            android:id="@+id/buttonSignUp"
             android:textAllCaps="true"
             android:textColor="@color/white" />
 

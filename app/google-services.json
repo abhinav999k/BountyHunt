@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "347736697181",
+    "firebase_url": "https://bounty-hunter-1f1bd.firebaseio.com",
+    "project_id": "bounty-hunter-1f1bd",
+    "storage_bucket": "bounty-hunter-1f1bd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:347736697181:android:4eadb8cbd482619a",
+        "android_client_info": {
+          "package_name": "com.example.abhin_000.bountyhunt"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "347736697181-7pardbg78sbfggc5qkjkgj0n22q02eve.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSZcxrSNKzKrL2HMFfh3VCzm8IIsLDvn8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
