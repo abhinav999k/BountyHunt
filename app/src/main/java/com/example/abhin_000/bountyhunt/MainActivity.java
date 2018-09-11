@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         if(firebaseAuth.getCurrentUser() != null){
             finish(); //before starting another activity close current one
-            startActivity(new Intent(getApplicationContext(), profileActivity.class));
+            startActivity(new Intent(getApplicationContext(), NavigationActivity.class));
         }
         buttonLogIn = findViewById(R.id.buttonLogIn);
         buttonSignUp = findViewById(R.id.buttonSignUp);
@@ -81,7 +81,7 @@ public class MainActivity extends AppCompatActivity {
                                     progressDialog.dismiss();
                                     Toast.makeText(MainActivity.this,"Login successful ",Toast.LENGTH_SHORT).show();
                                     finish(); //before starting another activity close current one
-                                    startActivity(new Intent(getApplicationContext(), profileActivity.class));
+                                    startActivity(new Intent(getApplicationContext(), NavigationActivity.class));
 
                                 }else{
                                     Toast.makeText(MainActivity.this,"Login failed ",Toast.LENGTH_SHORT).show();
