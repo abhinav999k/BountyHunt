@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -25,6 +26,8 @@ public class AnswerQuestion extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
     public QuestionFormat questionFormat;
     public QuestionFormat qf;
+    public TextView textViewQuestion;
+    public TextView textViewAnswer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,10 +38,13 @@ public class AnswerQuestion extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         databaseUsers = FirebaseDatabase.getInstance().getReference("User Questions");
         answerSubmit = findViewById(R.id.submit_answer);
+        textViewAnswer = findViewById(R.id.answer_text_view);
+        textViewQuestion = findViewById(R.id.question_text_view);
+        fetch_data(1);
         answerSubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                fetch_update();
+                fetch_data(0);
             }
         });
     }
@@ -48,7 +54,7 @@ public class AnswerQuestion extends AppCompatActivity {
         questionID = getIntent().getStringExtra("QuestionID");
     }
 
-    private void fetch_update(){
+    private void fetch_data(final int flag){
 
         Query queryRef = databaseUsers;
         queryRef.addValueEventListener(new ValueEventListener() {
@@ -70,13 +76,21 @@ public class AnswerQuestion extends AppCompatActivity {
                         score = questionFormat.getScore();
                         question = questionFormat.getQuestion();
                         QID = questionFormat.getQID();
-                        answer = answerBox.getText().toString().trim();
+                        answer = questionFormat.getAnswer();
                         askedID = questionFormat.getAskedID();
                         answeredID = firebaseUser.getUid();
-                        qf = new QuestionFormat(score,question,QID,answer,askedID,answeredID);
-                        databaseChild = FirebaseDatabase.getInstance().getReference("User Questions").child(questionID);
-                        databaseChild.setValue(qf);
-                        Toast.makeText(AnswerQuestion.this,"Your answer is posted", Toast.LENGTH_SHORT).show();
+
+                        if(flag == 0) {
+                            answer = answerBox.getText().toString().trim();
+                            qf = new QuestionFormat(score, question, QID, answer, askedID, answeredID);
+                            databaseChild = FirebaseDatabase.getInstance().getReference("User Questions").child(questionID);
+                            databaseChild.setValue(qf);
+                            Toast.makeText(AnswerQuestion.this, "Your answer is posted", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(flag == 1){
+                            textViewQuestion.setText(question);
+                            textViewAnswer.setText(answer);
+                        }
                     }
                 }
 
