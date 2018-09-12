@@ -26,6 +26,16 @@ public class QuestionFormat {
            this.answeredID = "Not yet answered";
     }
 
+    public QuestionFormat(int score, String question, String QID, String answer, String askedID, String answeredID){
+        this.score = score;
+        this.QID = QID;
+        this.question = question;
+        this.answer = answer;
+        this.askedID = askedID;
+        this.answeredID = answeredID;
+    }
+
+
     public int getScore() {
         return score;
     }

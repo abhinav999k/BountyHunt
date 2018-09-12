@@ -1,6 +1,7 @@
 package com.example.abhin_000.bountyhunt;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -30,10 +31,19 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.vHolde
     }
 
     @Override
-    public void onBindViewHolder(@NonNull vHolder holder, int position) {
+    public void onBindViewHolder(@NonNull vHolder holder, final int position) {
          holder.textViewScore.setText(Integer.toString(data.get(position).getScore()));
-         holder.textViewName.setText(data.get(position).getName());
+         String name = data.get(position).getAskedID();
+         holder.textViewName.setText(name);
          holder.textViewQuestion.setText(data.get(position).getQuestion());
+         holder.textViewQuestion.setOnClickListener(new View.OnClickListener() {
+             @Override
+             public void onClick(View v) {
+                 Intent intent = new Intent(context, AnswerQuestion.class);
+                 intent.putExtra("QuestionID",data.get(position).getQID());
+                 context.startActivity(intent);
+             }
+         });
 
     }
 

@@ -28,9 +28,6 @@ import java.util.List;
 
 public class GlobalQuestionFragment extends Fragment{
 
-    //private ImageView imageViewEditName;
-    //private Button buttonSave;
-    //private EditText editTextUserName;
     private DatabaseReference databaseUsers;
     private FirebaseAuth firebaseAuth;
     RecyclerView recyclerView;
@@ -44,7 +41,6 @@ public class GlobalQuestionFragment extends Fragment{
     }
 
 
-
     @Override
     public void onViewCreated(@NonNull final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
@@ -53,59 +49,6 @@ public class GlobalQuestionFragment extends Fragment{
         recyclerView = view.findViewById(R.id.recyclerView);
         linearLayoutManager = new LinearLayoutManager(getActivity());
         questionFormats = new ArrayList<>();
-
-        /*QuestionFormat a1 = new QuestionFormat(58,"Abhinav Kumar","When the hell this project is going to complete?Damn!");
-        QuestionFormat a2 = new QuestionFormat(59,"Abhinav Kumar","When the hell this project is going to complete?Damn!");
-        QuestionFormat a3 = new QuestionFormat(58,"Abhinav Kumar","When the hell this project is going to complete?Damn!");
-        QuestionFormat a4 = new QuestionFormat(58,"Abhinav Kumar","When the hell this project is going to complete?Damn!");
-        QuestionFormat a5 = new QuestionFormat(58,"Abhinav Kumar","When the hell this project is going to complete?Damn!");
-        QuestionFormat a6 = new QuestionFormat(58,"Abhinav Kumar","When the hell this project is going to complete?Damn!");
-        QuestionFormat a7 = new QuestionFormat(58,"Abhinav Kumar","When the hell this project is going to complete?Damn!");
-        QuestionFormat a8 = new QuestionFormat(58,"Abhinav Kumar","When the hell this project is going to complete?Damn!");
-        QuestionFormat a9 = new QuestionFormat(58,"Abhinav Kumar","When the hell this project is going to complete?Damn!");
-        QuestionFormat a10 = new QuestionFormat(58,"Abhinav Kumar","When the hell this project is going to complete?Damn!");
-        QuestionFormat a11 = new QuestionFormat(58,"Abhinav Kumar","When the hell this project is going to complete?Damn!");
-        QuestionFormat a12 = new QuestionFormat(58,"Abhinav Kumar","When the hell this project is going to complete?Damn!");*/
-
-
-
-
-
-
-
-        /*imageViewEditName = view.findViewById(R.id.imageViewEditName);
-        buttonSave = view.findViewById(R.id.buttonSave);
-        editTextUserName = view.findViewById(R.id.editTextUserName);
-        firebaseAuth = FirebaseAuth.getInstance();
-        databaseReference = FirebaseDatabase.getInstance().getReference();
-        buttonSave.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                buttonSave.setVisibility(View.GONE);
-                saveUserInformation();
-            }
-        });
-        imageViewEditName.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                enableEditing();
-            }
-        });
-
-
-    }
-    private void enableEditing(){
-        buttonSave.setVisibility(View.VISIBLE);
-        editTextUserName.setEnabled(true);
-    }
-
-    private void saveUserInformation(){
-        String name = editTextUserName.getText().toString().trim();
-        UserInformation userInformation = new UserInformation(name);
-        FirebaseUser firebaseUser = firebaseAuth.getCurrentUser();
-        databaseReference.child(firebaseUser.getUid()).setValue(userInformation);
-        Toast.makeText(getActivity(),"Information saved...", Toast.LENGTH_SHORT).show();
-    }*/
     }
 
     @Override
@@ -120,7 +63,6 @@ public class GlobalQuestionFragment extends Fragment{
                     questionFormats.add(question);
                 }
 
-               // ArrayList list = new ArrayList(Arrays.asList(a));
 
                 questionAdapter = new QuestionAdapter(questionFormats,getActivity());
                 recyclerView.setAdapter(questionAdapter);
